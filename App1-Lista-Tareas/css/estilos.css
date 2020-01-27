@@ -1,0 +1,27 @@
+body {
+    padding-top: 50px;
+}
+
+.area-contenido {
+    padding: 40px 15px;
+}
+
+.area-entrada {
+    margin: 25px;
+}
+
+.texto-tarea {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.oculto {
+    display: none;
+}
+
+.area-icono-eliminacion {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
