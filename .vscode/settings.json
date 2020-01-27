@@ -13,5 +13,5 @@
     "editor.fontSize": 25,
     "editor.minimap.enabled": false,
     "editor.wordWrap": "on",
-    "window.zoomLevel": 1
+    "window.zoomLevel": 0
 }
