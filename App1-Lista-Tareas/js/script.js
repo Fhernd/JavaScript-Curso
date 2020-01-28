@@ -41,6 +41,11 @@ class ListaTareas{
                     <div class="col-md-10 col-xs-10 col-lg-10 col-sm-10 texto-tarea ${tarea.completado ? 'tarea-completada' : ''}">
                         ${tarea.tarea}
                     </div>
+                    <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1 area-icono-eliminacion">
+                        <a class="" href="/" onclick="listaTareas.eliminarTarea(event, ${indice})">
+                            <i id="eliminarTarea" data-id=${indice} class="icono-eliminacion glyphicon glyphicon-trash"></i>
+                        </a>
+                    </div>
                 </div>
             </li>
         `;
