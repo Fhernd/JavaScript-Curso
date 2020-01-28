@@ -31,7 +31,6 @@ class ListaTareas{
 
     cambiarEstadoTarea(indice) {
         this.tareas[indice].completado = !this.tareas[indice].completado;
-        console.log(this.tareas[indice]);
         this.cargarTareas();
     }
 
@@ -44,19 +43,21 @@ class ListaTareas{
     generarHtmlTarea(tarea, indice) {
         return `
             <li class="list-group-item checkbox>
-                <div class="row">
-                    <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1 checkbox">
-                        <label>
-                            <input id="cambiarEstadoTarea" type="checkbox" onchange="listaTareas.cambiarEstadoTarea(${indice})" value="" class="" ${tarea.completado ? 'checked': ''}>
-                        </label>
-                    </div>
-                    <div class="col-md-10 col-xs-10 col-lg-10 col-sm-10 texto-tarea ${tarea.completado ? 'tarea-completada' : ''}">
-                        ${tarea.tarea}
-                    </div>
-                    <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1 area-icono-eliminacion">
-                        <a class="" href="/" onclick="listaTareas.eliminarTarea(event, ${indice})">
-                            <i id="eliminarTarea" data-id=${indice} class="fas fa-trash-alt"></i>
-                        </a>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1 checkbox">
+                            <label>
+                                <input id="cambiarEstadoTarea" type="checkbox" onchange="listaTareas.cambiarEstadoTarea(${indice})" value="" class="caja-comprobacion" ${tarea.completado ? 'checked': ''}>
+                            </label>
+                        </div>
+                        <div class="col-md-10 col-xs-10 col-lg-10 col-sm-10 texto-tarea ${tarea.completado ? 'tarea-completada' : ''}">
+                            ${tarea.tarea}
+                        </div>
+                        <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1 area-icono-eliminacion">
+                            <a class="" href="/" onclick="listaTareas.eliminarTarea(event, ${indice})">
+                                <i id="eliminarTarea" data-id=${indice} class="fas fa-trash-alt"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </li>

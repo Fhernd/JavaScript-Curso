@@ -33,3 +33,7 @@ body {
 .tarea-completada {
     text-decoration: line-through;
 }
+
+.caja-comprobacion {
+    margin-top: 15px;
+}
