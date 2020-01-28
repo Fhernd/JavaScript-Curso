@@ -35,6 +35,12 @@ class ListaTareas{
         cargarTareas();
     }
 
+    eliminarTarea(evento, indice) {
+        evento.preventDefault();
+        this.tareas.splice(indice, 1);
+        this.cargarTareas();
+    }
+
     generarHtmlTarea(tarea, indice) {
         return `
             <li class="list-group-item checkbox>
