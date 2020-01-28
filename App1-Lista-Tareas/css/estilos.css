@@ -25,3 +25,11 @@ body {
     align-items: center;
     height: 40px;
 }
+
+.icono-eliminacion {
+    color: red;
+}
+
+.tarea-completada {
+    text-decoration: line-through;
+}
