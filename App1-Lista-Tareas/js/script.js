@@ -26,4 +26,18 @@ class ListaTareas{
     cargarTareas() {
 
     }
+
+    agregarTarea() {
+
+    }
+
+    agregarTareaClick() {
+        
+    }
 }
+
+let listaTareas;
+
+window.addEventListener('load', () => {
+    listaTareas = new ListaTareas();
+})
