@@ -13,4 +13,17 @@ class ListaTareas{
         this.cargarTareas();
         this.agregarEventListeners();
     }
+
+    agregarEventListeners() {
+        document.getElementById('recordatorio').addEventListener('keypress', (evento) => {
+            if(evento.keyCode == 13){
+                this.agregarTarea(evento.target.value);
+                evento.target.value = '';
+            }
+        });
+    }
+
+    cargarTareas() {
+
+    }
 }
