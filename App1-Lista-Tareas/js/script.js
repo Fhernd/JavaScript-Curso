@@ -24,7 +24,13 @@ class ListaTareas{
     }
 
     cargarTareas() {
+        localStorage.setItem('tareas', JSON.stringify(this.tareas));
+        let htmlTareas = this.tareas.reduce((html, tarea, indice) => html += this.generarHtmlTarea(tarea, indice), '');
+        document.getElementById('listaTareas').innerHTML = htmlTareas;
+    }
 
+    generarHtmlTarea() {
+        
     }
 
     agregarTarea(tarea) {
