@@ -38,6 +38,9 @@ class ListaTareas{
                             <input id="cambiarEstadoTarea" type="checkbox" onchange="listaTareas.cambiarEstadoTarea(${indice}) value="" class="" ${tarea.completado ? 'checked': ''}>
                         </label>
                     </div>
+                    <div class="col-md-10 col-xs-10 col-lg-10 col-sm-10 texto-tarea ${tarea.completado ? 'tarea-completada' : ''}">
+                        ${tarea.tarea}
+                    </div>
                 </div>
             </li>
         `;
