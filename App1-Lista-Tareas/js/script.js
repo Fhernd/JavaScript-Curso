@@ -28,7 +28,21 @@ class ListaTareas{
     }
 
     agregarTarea(tarea) {
-        
+        let padre = document.getElementById('recordatorio').parentElement;
+
+        if (tarea !== ''){
+            padre.classList.remove('has-error');
+
+            let nuevaTarea = {
+                tarea,
+                completado: false
+            };
+
+            this.tareas.push(nuevaTarea);
+            this.cargarTareas();
+        } else {
+            padre.classList.add('has-error');
+        }
     }
 
     agregarTareaClick() {
