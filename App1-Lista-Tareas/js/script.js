@@ -27,12 +27,17 @@ class ListaTareas{
 
     }
 
-    agregarTarea() {
-
+    agregarTarea(tarea) {
+        
     }
 
     agregarTareaClick() {
-        
+        let recordatorio = document.getElementById('recordatorio');
+        let tarea = recordatorio.value;
+        if (tarea){
+            this.agregarTarea(tarea);
+            recordatorio.value = '';
+        }
     }
 }
 
