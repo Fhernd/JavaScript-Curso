@@ -29,6 +29,12 @@ class ListaTareas{
         document.getElementById('listaTareas').innerHTML = htmlTareas;
     }
 
+    cambiarEstadoTarea(indice) {
+        this.tareas[indice].completado = !this.tareas[indice].completado;
+
+        cargarTareas();
+    }
+
     generarHtmlTarea(tarea, indice) {
         return `
             <li class="list-group-item checkbox>
