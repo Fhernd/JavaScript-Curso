@@ -29,8 +29,18 @@ class ListaTareas{
         document.getElementById('listaTareas').innerHTML = htmlTareas;
     }
 
-    generarHtmlTarea() {
-        
+    generarHtmlTarea(tarea, indice) {
+        return `
+            <li class="list-group-item checkbox>
+                <div class="row">
+                    <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1 checkbox">
+                        <label>
+                            <input id="cambiarEstadoTarea" type="checkbox" onchange="listaTareas.cambiarEstadoTarea(${indice}) value="" class="" ${tarea.completado ? 'checked': ''}>
+                        </label>
+                    </div>
+                </div>
+            </li>
+        `;
     }
 
     agregarTarea(tarea) {
