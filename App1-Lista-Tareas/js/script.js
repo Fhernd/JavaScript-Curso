@@ -31,8 +31,8 @@ class ListaTareas{
 
     cambiarEstadoTarea(indice) {
         this.tareas[indice].completado = !this.tareas[indice].completado;
-
-        cargarTareas();
+        console.log(this.tareas[indice]);
+        this.cargarTareas();
     }
 
     eliminarTarea(evento, indice) {
@@ -47,7 +47,7 @@ class ListaTareas{
                 <div class="row">
                     <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1 checkbox">
                         <label>
-                            <input id="cambiarEstadoTarea" type="checkbox" onchange="listaTareas.cambiarEstadoTarea(${indice}) value="" class="" ${tarea.completado ? 'checked': ''}>
+                            <input id="cambiarEstadoTarea" type="checkbox" onchange="listaTareas.cambiarEstadoTarea(${indice})" value="" class="" ${tarea.completado ? 'checked': ''}>
                         </label>
                     </div>
                     <div class="col-md-10 col-xs-10 col-lg-10 col-sm-10 texto-tarea ${tarea.completado ? 'tarea-completada' : ''}">
@@ -55,7 +55,7 @@ class ListaTareas{
                     </div>
                     <div class="col-md-1 col-xs-1 col-lg-1 col-sm-1 area-icono-eliminacion">
                         <a class="" href="/" onclick="listaTareas.eliminarTarea(event, ${indice})">
-                            <i id="eliminarTarea" data-id=${indice} class="icono-eliminacion glyphicon glyphicon-trash"></i>
+                            <i id="eliminarTarea" data-id=${indice} class="fas fa-trash-alt"></i>
                         </a>
                     </div>
                 </div>
