@@ -1,3 +1,7 @@
+body {
+    padding-top: 70px;
+}
+
 .principal{
     display: flex;
     flex-direction: row;
@@ -15,4 +19,21 @@
 
 .imagen-canvas {
     border: 2px solid #000000;
+}
+
+.area-entrada {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.form-group {
+    width: 90%;
+}
+
+.boton-descarga {
+    margin-top: 10px;
 }
