@@ -46,12 +46,21 @@ class CreadorMemes{
                     contexto.clearRect(0, 0, this.imagenCanvas.height, this.imagenCanvas.width);
                     contexto.drawImage(image, 0, 0);
 
-                    let tamagnioFuente = ((this.imagenCanvas.width+this.imagenCanvas.height)/2) * 4 / 100;
+                    let tamagnioFuente = ((this.imagenCanvas.width + this.imagenCanvas.height)/2) * 4 / 100;
                     contexto.font = `${tamagnioFuente}pt sans-serif`;
                     contexto.textAlign = 'center';
                     contexto.textBaseline = 'top';
 
-                    
+                    contexto.lineJoin = 'round';
+                    contexto.lineWidth = tamagnioFuente/5;
+                    contexto.strokeStyle = 'black';
+                    contexto.fillStyle = 'white';
+
+                    let textoArriba = this.textoSuperior.value.toUpperCase();
+                    let textoAbajo = this.textoInferior.value.toUpperCase();
+
+                    contexto.strokeText(textoArriba, this.imagenCanvas.width/2, this.imagenCanvas.height*(5/100));
+                    contexto.fillText(textoArriba, this.imagenCanvas.width/2, this.imagenCanvas.height*(5/100));
                 }
             }
         }
