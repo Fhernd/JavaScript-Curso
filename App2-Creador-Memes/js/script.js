@@ -61,12 +61,34 @@ class CreadorMemes{
 
                     contexto.strokeText(textoArriba, this.imagenCanvas.width/2, this.imagenCanvas.height*(5/100));
                     contexto.fillText(textoArriba, this.imagenCanvas.width/2, this.imagenCanvas.height*(5/100));
-                }
-            }
+
+                    contexto.strokeText(textoAbajo, this.imagenCanvas.width/2, this.imagenCanvas.height*(90/100));
+                    contexto.fillText(textoAbajo, this.imagenCanvas.width/2, this.imagenCanvas.height*(90/100));
+
+                    this.redimensionarCanvas(this.imagenCanvas.height, this.imagenCanvas.width);
+                };
+
+                image.src = lector.result;
+            };
+
+            lector.readAsDataURL(this.imagen.files[0]);
+        }
+    }
+
+    redimensionarCanvas(alto, ancho) {
+        this.imagenCanvas.height = `${alto}px`;
+        this.imagenCanvas.width = `${ancho}px`;
+
+        while(alto > Math.min(1000, ANCHO_DISPOSITIVO - 30)
+            && ancho > Math.min(1000, ANCHO_DISPOSITIVO - 30)){
+            alto /= 2;
+            ancho /= 2;
+            this.imagenCanvas.height = `${alto}px`;
+            this.imagenCanvas.width = `${ancho}px`;
         }
     }
 
     descargarMeme() {
-
+        
     }
 }
