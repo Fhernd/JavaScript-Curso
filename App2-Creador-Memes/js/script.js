@@ -9,6 +9,7 @@ class CreadorMemes{
         this.descargarMeme = document.getElementById('descargarMeme');
 
         this.crearCanvas();
+        this.agregarEventListeners();
     }
 
     crearCanvas() {
@@ -17,5 +18,23 @@ class CreadorMemes{
 
         this.imagenCanvas.height = alto;
         this.imagenCanvas.width = ancho;
+    }
+
+    agregarEventListeners() {
+        this.crearMeme = this.crearMeme.bind(this);
+        this.descargarMeme = this.descargarMeme.bind(this);
+        let entradas = [this.textoSuperior, this.textoInferior, this.imagen];
+
+        entradas.forEach(e => e.addEventListener('keyup', this.crearMeme));
+        entradas.forEach(e => e.addEventListener('change', this.crearMeme));
+        this.descargarMeme.addEventListener('click', this.descargarMeme);
+    }
+
+    crearMeme() {
+
+    }
+
+    descargarMeme() {
+        
     }
 }
