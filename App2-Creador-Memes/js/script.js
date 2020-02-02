@@ -31,10 +31,33 @@ class CreadorMemes{
     }
 
     crearMeme() {
+        let contexto = this.imagenCanvas.getContext('2d');
 
+        if(this.imagen.files && this.imagen.files[0]){
+            let lector = new FileReader();
+
+            lector.onload = function() {
+                let image = new Image();
+
+                image.onload = function() {
+                    this.imagenCanvas.height = image.height;
+                    this.imagenCanvas.width = image.width;
+
+                    contexto.clearRect(0, 0, this.imagenCanvas.height, this.imagenCanvas.width);
+                    contexto.drawImage(image, 0, 0);
+
+                    let tamagnioFuente = ((this.imagenCanvas.width+this.imagenCanvas.height)/2) * 4 / 100;
+                    contexto.font = `${tamagnioFuente}pt sans-serif`;
+                    contexto.textAlign = 'center';
+                    contexto.textBaseline = 'top';
+
+                    
+                }
+            }
+        }
     }
 
     descargarMeme() {
-        
+
     }
 }
