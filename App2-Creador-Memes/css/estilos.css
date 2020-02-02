@@ -1,0 +1,18 @@
+.principal{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.area-canvas {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.imagen-canvas {
+    border: 2px solid #000000;
+}
