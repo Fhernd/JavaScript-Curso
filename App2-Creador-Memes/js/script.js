@@ -105,7 +105,7 @@ class CreadorMemes{
 
         let fuenteImagen = this.imagenCanvas.toDataURL('image/png');
         let atributo = document.createAttribute('href');
-        atributo.value = fuenteImagen.replace(/^data:image\/[^;]/, 'data:application/octect-stream');
+        atributo.value = fuenteImagen.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
         this.btnDescargarMeme.setAttributeNode(atributo);
     }
 }
