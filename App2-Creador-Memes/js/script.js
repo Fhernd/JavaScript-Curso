@@ -6,7 +6,7 @@ class CreadorMemes{
         this.imagen = document.getElementById('imagen');
         this.textoSuperior = document.getElementById('textoSuperior');
         this.textoInferior = document.getElementById('textoInferior');
-        this.descargarMeme = document.getElementById('descargarMeme');
+        this.btnDescargarMeme = document.getElementById('descargarMeme');
 
         this.crearCanvas();
         this.agregarEventListeners();
@@ -104,5 +104,8 @@ class CreadorMemes{
         this.textoInferior.parentElement.classList.remove('has-error');
 
         let fuenteImagen = this.imagenCanvas.toDataURL('image/png');
+        let atributo = document.createAttribute('href');
+        atribute.value = fuenteImagen.replace(/^data:image\/[^;]/, 'data:application/octect-stream');
+        this.btnDescargarMeme.setAttributeNode(atributo);
     }
 }
