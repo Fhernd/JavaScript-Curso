@@ -89,6 +89,20 @@ class CreadorMemes{
     }
 
     descargarMeme() {
-        
+        if(!this.imagen.files[0]){
+            this.imagen.parentElement.classList.add('has-error');
+            return;
+        }
+
+        if (this.textoInferior.value === ''){
+            this.imagen.parentElement.classList.add('has-error');
+            this.textoInferior.parentElement.classList.add('has-error');
+            return;
+        }
+
+        this.imagen.parentElement.classList.remove('has-error');
+        this.textoInferior.parentElement.classList.remove('has-error');
+
+        let fuenteImagen = this.imagenCanvas.toDataURL('image/png');
     }
 }
