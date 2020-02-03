@@ -76,15 +76,15 @@ class CreadorMemes{
     }
 
     redimensionarCanvas(alto, ancho) {
-        this.imagenCanvas.height = `${alto}px`;
-        this.imagenCanvas.width = `${ancho}px`;
+        this.imagenCanvas.style.height = `${alto}px`;
+        this.imagenCanvas.style.width = `${ancho}px`;
 
         while(alto > Math.min(1000, ANCHO_DISPOSITIVO - 30)
             && ancho > Math.min(1000, ANCHO_DISPOSITIVO - 30)){
             alto /= 2;
             ancho /= 2;
-            this.imagenCanvas.height = `${alto}px`;
-            this.imagenCanvas.width = `${ancho}px`;
+            this.imagenCanvas.style.height = `${alto}px`;
+            this.imagenCanvas.style.width = `${ancho}px`;
         }
     }
 
