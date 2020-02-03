@@ -109,3 +109,5 @@ class CreadorMemes{
         this.btnDescargarMeme.setAttributeNode(atributo);
     }
 }
+
+new CreadorMemes();
