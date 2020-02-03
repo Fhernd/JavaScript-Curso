@@ -27,7 +27,7 @@ class CreadorMemes{
 
         entradas.forEach(e => e.addEventListener('keyup', this.crearMeme));
         entradas.forEach(e => e.addEventListener('change', this.crearMeme));
-        this.descargarMeme.addEventListener('click', this.descargarMeme);
+        this.btnDescargarMeme.addEventListener('click', this.descargarMeme);
     }
 
     crearMeme() {
@@ -36,10 +36,10 @@ class CreadorMemes{
         if(this.imagen.files && this.imagen.files[0]){
             let lector = new FileReader();
 
-            lector.onload = function() {
+            lector.onload = () => {
                 let image = new Image();
 
-                image.onload = function() {
+                image.onload = () => {
                     this.imagenCanvas.height = image.height;
                     this.imagenCanvas.width = image.width;
 
