@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App3 - Widget Clima</title>
+</head>
+<body>
+    <script type="module">
+        import * as XWeather from './node_modules/x-weather/dist/esm/module.js'
+       
+        XWeather.defineCustomElements()
+      </script> 
+      <x-weather
+        appid="40aabb59f41e9e88db7be4bab11f49f8"
+        latitude="1.85431"
+        longitude="-76.0516"
+        placename="Pitalito, Huila, Colombia"
+      >
+        <x-current primaryscale="f"></x-current>
+        <x-forecast days="5" primaryscale="f"></x-forecast>
+      </x-weather>
+</body>
+</html>
