@@ -16,6 +16,22 @@ app.get('/', function(req, res) {
     res.send('Bienvenido a la API de Registro de Eventos.');
 });
 
+app.post('/registro', (req, res, next) => {
+    let campo;
+    for(campo in req.body){
+        if(!req.body[campo] && campo !== 'expectativas'){
+            res.status(400).json({});
+            return next();
+        }
+    }
+
+    setTimeout(() => {
+        res.status(200).json({'mensaje': `El usuario ${req.body.usuario} se ha registrado de forma satisfactoria.`});
+    }, 5000);
+});
+
+
+
 let servidor = http.Server(app);
 servidor.listen(app.get('port'), function() {
     console.log(`El servidor Express se está ejecutando en el puerto ${app.get('port')}.`);
