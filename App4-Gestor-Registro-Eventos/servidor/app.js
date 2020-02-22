@@ -26,7 +26,7 @@ app.post('/registro', (req, res, next) => {
     }
 
     setTimeout(() => {
-        res.status(200).json({'mensaje': `El usuario ${req.body.usuario} se ha registrado de forma satisfactoria.`});
+        res.status(200).json({'mensaje': `El usuario ${req.body.nombre} se ha registrado de forma satisfactoria.`});
     }, 5000);
 });
 
