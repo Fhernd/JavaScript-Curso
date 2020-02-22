@@ -1,0 +1,16 @@
+{
+  "name": "servidor",
+  "version": "1.0.0",
+  "description": "Backend para aplicación de Registro de Eventos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backend",
+    "servidor",
+    "aplicación"
+  ],
+  "author": "John Ortiz Ordoñez",
+  "license": "ISC"
+}
