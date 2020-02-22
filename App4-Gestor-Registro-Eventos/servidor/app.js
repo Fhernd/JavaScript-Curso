@@ -30,7 +30,15 @@ app.post('/registro', (req, res, next) => {
     }, 5000);
 });
 
-
+app.get('/estadisticas', (req, res, next) => {
+    setTimeout(() => {
+        res.status(200).json({
+            profesion: [40, 35, 25, 30],
+            experiencia: [10, 30, 20],
+            edad: [40, 30, 20]
+        });
+    }, 5000);
+});
 
 let servidor = http.Server(app);
 servidor.listen(app.get('port'), function() {
