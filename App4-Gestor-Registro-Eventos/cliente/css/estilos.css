@@ -1,0 +1,29 @@
+body {
+    padding-top: 78px;
+}
+
+.area-formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-evento {
+    margin: 20px;
+}
+
+.form-group {
+    min-width: 500px;
+}
+
+@media only screen and (max-width: 736px) {
+    .form-group {
+        min-width: 90vw;
+    }
+}
+
+.indicador-carga {
+    max-width: 50px;
+    max-height: 50px;
+}

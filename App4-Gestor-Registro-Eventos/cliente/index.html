@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Registro Eventos</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -75,12 +76,14 @@
                     <label for="expectativas">Expectativas que tiene del evento:</label>
                     <textarea class="form-control" id="expectativas" rows="5"></textarea>
                 </div>
-                <button class="btn btn-default" id="registrarEvento">Registrar</button>
+                <button type="submit" class="btn btn-default" id="registrarEvento">Registrar</button>
+                <img src="images/loading.gif" alt="Cargando" class="indicador-carga hidden" id="indicadorCarga">
             </form>
         </div>
     </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
