@@ -22,7 +22,13 @@ class RegistroEvento{
         const datosFormulario = this.obtenerDatosFormulario();
         const resultadoValidacion = validarDatosFormularioRegistroEvento(datosFormulario);
 
-        
+        if (resultadoValidacion.esValido){
+            this.removerErroresCampos();
+            this.prepararEnvioDatos(datosFormulario);
+        } else {
+            this.removerErroresCampos();
+            this.resaltarCamposConErrores(resultadoValidacion.resultado);
+        }
     }
 
     obtenerDatosFormulario() {
@@ -32,8 +38,23 @@ class RegistroEvento{
             telefonoMovil: this.telefonoMovil.value,
             edad: this.edad.value,
             profesion: this.profesion.value,
-            experiencia: this.experiencia.value,
+            experiencia: parseInt(document.querySelector('input[name="experiencia"]:checked').value),
             expectativas: this.expectativas.value
         };
+    }
+
+    removerErroresCampos() {
+
+    }
+
+    resaltarCamposConErrores(resultado) {
+        if(!resultado.nombre){
+            this.nombre.parentElement.classList.add('has-error');
+        }
+        
+    }
+
+    prepararEnvioDatos(datosFormulario){
+
     }
 }
