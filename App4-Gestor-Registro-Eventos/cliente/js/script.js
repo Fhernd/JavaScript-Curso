@@ -17,6 +17,21 @@ class RegistroEvento{
     }
 
     subirFormulario(evento){
-        
+        event.preventDefault();
+
+        const datosFormulario = this.obtenerDatosFormulario();
+        const resultadoValidacion = validarDatosFormularioRegistroEvento(datosFormulario);
+    }
+
+    obtenerDatosFormulario() {
+        return {
+            nombre: this.nombre.value,
+            email: this.email.value,
+            telefonoMovil: this.telefonoMovil.value,
+            edad: this.edad.value,
+            profesion: this.profesion.value,
+            experiencia: this.experiencia.value,
+            expectativas: this.expectativas.value
+        };
     }
 }

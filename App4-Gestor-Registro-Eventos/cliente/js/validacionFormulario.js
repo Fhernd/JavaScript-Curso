@@ -1,0 +1,3 @@
+function validarDatosFormularioRegistroEvento(datosFormulario){
+    
+}
