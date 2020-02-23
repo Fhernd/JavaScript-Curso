@@ -60,9 +60,22 @@
                 <div class="form-group">
                     <label for="edad">Experiencia JavaScript:</label>
                     <div>
-                        <div class="radio-inline"></div>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="experiencia" id="experiencia" value="1">Principiante</label>
+                        </div>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="experiencia" value="2">Intermedio</label>
+                        </div>
+                        <div class="radio-inline">
+                            <label><input type="radio" name="experiencia" value="3">Avanzado</label>
+                        </div>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="expectativas">Expectativas que tiene del evento:</label>
+                    <textarea class="form-control" id="expectativas" rows="5"></textarea>
+                </div>
+                <button class="btn btn-default" id="registrarEvento">Registrar</button>
             </form>
         </div>
     </div>
