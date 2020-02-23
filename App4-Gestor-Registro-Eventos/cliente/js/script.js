@@ -44,17 +44,38 @@ class RegistroEvento{
     }
 
     removerErroresCampos() {
-
+        this.nombre.parentElement.classList.remove('has-error');
+        this.email.parentElement.classList.remove('has-error');
+        this.telefonoMovil.parentElement.classList.remove('has-error');
+        this.edad.parentElement.classList.remove('has-error');
+        this.profesion.parentElement.classList.remove('has-error');
+        this.experiencia.parentElement.classList.remove('has-error');
     }
 
     resaltarCamposConErrores(resultado) {
         if(!resultado.nombre){
             this.nombre.parentElement.classList.add('has-error');
         }
-        
+        if(!resultado.email){
+            this.email.parentElement.classList.add('has-error');
+        }
+        if(!resultado.telefonoMovil){
+            this.telefonoMovil.parentElement.classList.add('has-error');
+        }
+        if(!resultado.edad){
+            this.edad.parentElement.classList.add('has-error');
+        }
+        if(!resultado.profesion){
+            this.profesion.parentElement.classList.add('has-error');
+        }
+        if(!resultado.experiencia){
+            this.experiencia.parentElement.classList.add('has-error');
+        }
     }
 
     prepararEnvioDatos(datosFormulario){
-
+        this.registrarEvento.classList.add('hidden');
+        this.indicadorCarga.classList.remove('hidden');
+        
     }
 }
