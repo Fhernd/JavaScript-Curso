@@ -32,7 +32,37 @@
         <div class="area-formulario">
             <h1 class="titulo-evento">JavaScript - Evento</h1>
             <form action="#" id="frmRegistro" method="POST">
-                
+                <div class="form-group">
+                    <label for="nombre">Nombre*:</label>
+                    <input type="text" class="form-control" id="nombre">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email*:</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="telefonoMovil">Teléfono móvil*:</label>
+                    <input type="phone" class="form-control" id="telefonoMovil" placeholder="XXX-XXX-XXXX">
+                </div>
+                <div class="form-group">
+                    <label for="edad">Edad*:</label>
+                    <input type="number" class="form-control" id="edad" min="10", max="50">
+                </div>
+                <div class="form-group">
+                    <label for="profesion">Profesión:</label>
+                    <select id="profesion" class="form-control">
+                        <option value="estudiante">Estudiante</option>
+                        <option value="desarrollador">Desarrollador</option>
+                        <option value="ingeniero">Ingeniero</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edad">Experiencia JavaScript:</label>
+                    <div>
+                        <div class="radio-inline"></div>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
