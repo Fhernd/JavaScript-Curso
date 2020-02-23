@@ -3,10 +3,21 @@ function validarDatosFormularioRegistroEvento(datosFormulario){
         nombre: validarNombre(datosFormulario.nombre),
         email: validarEmail(datosFormulario.email),
         telefonoMovil: validarTelefonoMovil(datosFormulario.telefonoMovil),
-        edad: this.edad.value,
-        profesion: this.profesion.value,
-        experiencia: this.experiencia.value,
-        expectativas: this.expectativas.value
+        edad: validarEdad(datosFormulario.edad),
+        profesion: validarProfesion(datosFormulario.profesion),
+        experiencia: validarExperiencia(datosFormulario.experiencia)
+    };
+
+    let campo;
+    let esValido = true;
+
+    for(campo in resultado){
+        esValido = esValido && resultado[campo];
+    }
+
+    return {
+        esValido,
+        resultado
     };
 }
 
@@ -24,4 +35,18 @@ function validarTelefonoMovil(telefonoMovil){
     const regexTelefonoMovil = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 
     return regexTelefonoMovil.test(telefonoMovil);
+}
+
+function validarEdad(edad){
+    return edad >= 10 && edad <= 50;
+}
+
+function validarProfesion(profesion){
+    const profesionesDisponibles = ['estudiante', 'desarrollador', 'ingeniero', 'otro'];
+
+    return profesionesDisponibles.indexOf(profesion) > -1;
+}
+
+function validarExperiencia(experiencia){
+    return experiencia >= 1 && experiencia <= 3;
 }

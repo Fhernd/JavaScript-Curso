@@ -21,6 +21,8 @@ class RegistroEvento{
 
         const datosFormulario = this.obtenerDatosFormulario();
         const resultadoValidacion = validarDatosFormularioRegistroEvento(datosFormulario);
+
+        
     }
 
     obtenerDatosFormulario() {
