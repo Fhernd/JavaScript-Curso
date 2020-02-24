@@ -6,7 +6,7 @@ function solicitudApi(ruta, body={}, method='GET'){
 
         const detallesSolicitud = {
             method,
-            modo: 'cors',
+            mode: 'cors',
             headers
         };
 
@@ -14,6 +14,27 @@ function solicitudApi(ruta, body={}, method='GET'){
             detallesSolicitud.body = JSON.stringify(body);
         }
 
-        
+        function gestionarErrores(respuesta){
+            if (respuesta.ok){
+                return respuesta.json();
+            } else {
+                throw Error(respuesta.statusError);
+            }
+        }
+
+        fetch(`http://localhost:3900/${ruta}`, detallesSolicitud)
+        .then(gestionarErrores)
+        .then(resolve)
+        .then(reject);
+    });
+
+    const temporizador = new Promise((resolve, reject) => {
+        setTimeout(reject, 7000, 'La solicitud no se pudo completar.');
+    });
+
+    return new Promise((resolve, reject) => {
+        Promise.race([solicitud, temporizador])
+        .then(resolve)
+        .catch(reject);
     });
 }
