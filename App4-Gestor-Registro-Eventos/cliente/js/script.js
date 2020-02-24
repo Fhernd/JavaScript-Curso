@@ -76,6 +76,22 @@ class RegistroEvento{
     prepararEnvioDatos(datosFormulario){
         this.registrarEvento.classList.add('hidden');
         this.indicadorCarga.classList.remove('hidden');
-        
+
+        solicitudApi('registro', datosFormulario, 'POST')
+        .then(respuesta => {
+            this.registrarEvento.classList.remove('hidden');
+            this.indicadorCarga.classList.add('hidden');
+            this.removerDatosFormulario();
+        })
+    }
+
+    removerDatosFormulario(){
+        this.nombre.value = '';
+        this.email.value = '';
+        this.telefonoMovil.value = '';
+        this.edad.value = '';
+        this.profesion.value = 'Estudiante';
+        this.experiencia.checked = true;
+        this.expectativas.value = '';
     }
 }
