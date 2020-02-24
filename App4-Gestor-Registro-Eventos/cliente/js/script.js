@@ -82,7 +82,7 @@ class RegistroEvento{
             this.registrarEvento.classList.remove('hidden');
             this.indicadorCarga.classList.add('hidden');
             this.removerDatosFormulario();
-            alert(respuesta.mensaje);
+            alertify.alert(respuesta.mensaje);
         })
         .catch(() => {
             this.registrarEvento.classList.remove('hidden');
