@@ -24,7 +24,7 @@ function inicializarMap(){
 
 window.addEventListener('load', () => {
     const scriptMapa = document.createElement('script');
-    const llaveApi = 'AIzaSyDCugQUG_8vYlrXz2URJEUgYKuOF4miIcU';
+    const llaveApi = '<<AQUÍ_VA_LA_LLAVE_DE_API_GOOGLE_MAPS_JAVASCRIPT>>';
     scriptMapa.src = `https://maps.googleapis.com/maps/api/js?key=${llaveApi}&callback=inicializarMap`;
     document.body.appendChild(scriptMapa);
 });
