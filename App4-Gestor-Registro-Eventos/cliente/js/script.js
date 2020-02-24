@@ -18,6 +18,7 @@ class RegistroEvento{
 
     subirFormulario(evento){
         event.preventDefault();
+        console.log('Inicio método subirFormulario ');
 
         const datosFormulario = this.obtenerDatosFormulario();
         const resultadoValidacion = validarDatosFormularioRegistroEvento(datosFormulario);
@@ -26,6 +27,7 @@ class RegistroEvento{
             this.removerErroresCampos();
             this.prepararEnvioDatos(datosFormulario);
         } else {
+            console.log('Caso else ');
             this.removerErroresCampos();
             this.resaltarCamposConErrores(resultadoValidacion.resultado);
         }
@@ -83,6 +85,10 @@ class RegistroEvento{
             this.indicadorCarga.classList.add('hidden');
             this.removerDatosFormulario();
         })
+        .catch(() => {
+            this.registrarEvento.classList.remove('hidden');
+            this.indicadorCarga.classList.add('hidden');
+        });
     }
 
     removerDatosFormulario(){
@@ -95,3 +101,7 @@ class RegistroEvento{
         this.expectativas.value = '';
     }
 }
+
+window.addEventListener('load', () => {
+    new RegistroEvento();
+});
