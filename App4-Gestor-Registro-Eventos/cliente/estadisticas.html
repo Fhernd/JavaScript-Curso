@@ -35,7 +35,18 @@
 
     <div class="container">
         <h1 class="titulo">Datos Asistencia</h1>
-        
+        <div id="indicadorCarga">
+            <p>Los datos se están cargando...</p>
+            <img src="images/loading.gif" alt="Cargando..." class="indicador-carga">
+        </div>
+        <div id="errorCarga" class="hidden">
+            <h3>No se ha podido cargar los datos de estadísticas. Intente refrescando la página.</h3>
+        </div>
+        <ul class="nav nav-tabs hidden" id="tabsEstadisticas">
+            <li role="presentation" class="active"><a href="" id="tabProfesion">Profesión</a></li>
+            <li role="presentation"><a href="" id="tabExperiencia">Experiencia</a></li>
+            <li role="presentation"><a href="" id="tabEdad">Edad</a></li>
+        </ul>
     </div>
 
 </body>
