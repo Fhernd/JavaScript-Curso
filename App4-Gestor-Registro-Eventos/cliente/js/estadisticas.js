@@ -40,11 +40,18 @@ class Estadisticas{
         const data = {
             datasets: [{
                 data: this.datosEstadisticas.profesion,
-                backgroundColor:[
-                    
-                ]
-            }]
-        }
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)'
+                ],
+                borderColor: ['white', 'white', 'white', 'white']
+            }],
+            labels: ['Estudiante', 'Desarrollador', 'Ingeniero', 'Otro']
+        };
+
+        new Chart(this.graficoProfesion, {type: 'pie', data});
     }
 
     cargarDatosExperiencia(evento = null){
@@ -52,7 +59,24 @@ class Estadisticas{
             evento.preventDefault();
         }
 
-        
+        this.ocultarGraficos();
+        this.graficoExperiencia.classList.remove('hidden');
+        this.tabExperiencia.classList.add('active');
+
+        const data = {
+            datasets: [{
+                data: this.datosEstadisticas.experiencia,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)'
+                ],
+                borderColor: ['white', 'white', 'white']
+            }],
+            labels: ['Principiante', 'Intermedio', 'Avanzado']
+        };
+
+        new Chart(this.graficoExperiencia, {type: 'pie', data});
     }
 
     cargarDatosEdad(evento = null){
@@ -60,10 +84,27 @@ class Estadisticas{
             evento.preventDefault();
         }
 
-        
+        this.ocultarGraficos();
+        this.graficoEdad.classList.remove('hidden');
+        this.tabEdad.classList.add('active');
+
+        const data = {
+            datasets: [{
+                data: this.datosEstadisticas.edad,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)'
+                ],
+                borderColor: ['white', 'white', 'white']
+            }],
+            labels: ['Grupo 40 Años', 'Grupo 30 Años', 'Grupo 20 Años']
+        };
+
+        new Chart(this.graficoEdad, {type: 'pie', data});
     }
 
     ocultarGraficos() {
-
+        
     }
 }
