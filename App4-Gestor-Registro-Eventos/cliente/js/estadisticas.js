@@ -19,7 +19,14 @@ class Estadisticas{
     }
 
     cargarDatosEstadisticas() {
+        solicitudApi('estadisticas')
+        .then(respuesta => {
+            this.datosEstadisticas = respuesta;
 
+            this.indicadorCarga.classList.add('hidden');
+            this.tabsEstadisticas.classList.remove('hidden');
+            this.areaEstadisticas.classList.remove('hidden');
+        })
     }
 
     agregarEventListeners() {
@@ -105,6 +112,12 @@ class Estadisticas{
     }
 
     ocultarGraficos() {
+        this.graficoProfesion.classList.add('hidden');
+        this.graficoExperiencia.classList.add('hidden');
+        this.graficoEdad.classList.add('hidden');
         
+        this.tabProfesion.classList.remove('active');
+        this.tabExperiencia.classList.remove('active');
+        this.tabEdad.classList.remove('active');
     }
 }
