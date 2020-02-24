@@ -4,7 +4,7 @@ function inicializarMap(){
         center: {lat: 4.6097102, lng: -74.081749}
     });
 
-    let marcador = google.maps.Marker({
+    let marcador = new google.maps.Marker({
         map: mapa,
         draggable: true,
         animation: google.maps.Animation.DROP,
@@ -26,4 +26,5 @@ window.addEventListener('load', () => {
     const scriptMapa = document.createElement('script');
     const llaveApi = 'AIzaSyDCugQUG_8vYlrXz2URJEUgYKuOF4miIcU';
     scriptMapa.src = `https://maps.googleapis.com/maps/api/js?key=${llaveApi}&callback=inicializarMap`;
+    document.body.appendChild(scriptMapa);
 });
