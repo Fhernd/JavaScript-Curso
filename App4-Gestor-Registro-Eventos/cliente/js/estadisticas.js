@@ -26,7 +26,13 @@ class Estadisticas{
             this.indicadorCarga.classList.add('hidden');
             this.tabsEstadisticas.classList.remove('hidden');
             this.areaEstadisticas.classList.remove('hidden');
+
+            this.cargarDatosProfesion();
         })
+        .catch(() => {
+            this.indicadorCarga.classList.add('hidden');
+            this.errorCarga.classList.remove('hidden');
+        });
     }
 
     agregarEventListeners() {
@@ -121,3 +127,7 @@ class Estadisticas{
         this.tabEdad.classList.remove('active');
     }
 }
+
+window.addEventListener('load', () => {
+    new Estadisticas();
+});
