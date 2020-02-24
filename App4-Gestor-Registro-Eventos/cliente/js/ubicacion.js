@@ -18,5 +18,12 @@ function inicializarMap(){
     let ventanaInformacion = new google.maps.InfoWindow({
         content: 'El evento se realizará en Bogotá Colombia.'
     });
-    
+
+    ventanaInformacion.open(mapa, marcador);
 }
+
+window.addEventListener('load', () => {
+    const scriptMapa = document.createElement('script');
+    const llaveApi = 'AIzaSyDCugQUG_8vYlrXz2URJEUgYKuOF4miIcU';
+    scriptMapa.src = `https://maps.googleapis.com/maps/api/js?key=${llaveApi}&callback=inicializarMap`;
+});
