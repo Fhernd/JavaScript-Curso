@@ -51,7 +51,7 @@ class EmojiMatchingGame{
     }
 
     terminarJuego() {
-        alert('¡Has perdido!');
+        alertify.alert("¡Has perdido!");
 
         this.panelIzquierdo.lastChild.onclick = null;
         this.body.onclick = null;
