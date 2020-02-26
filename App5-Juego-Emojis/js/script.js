@@ -29,6 +29,27 @@ class EmojiMatchingGame{
         clonacionEmojis.removeChild(clonacionEmojis.lastChild);
 
         this.panelDerecho.appendChild(clonacionEmojis);
-        
+
+        this.panelIzquierdo.lastChild.onclick = this.pasarSiguienteNivel;
+    }
+
+    pasarSiguienteNivel(evento) {
+        evento.stopPropagation();
+
+        while(this.panelIzquierdo.hasChildNodes()){
+            this.panelIzquierdo.removeChild(this.panelIzquierdo.lastChild);
+        }
+
+        while(this.panelDerecho.hasChildNodes()){
+            this.panelDerecho.removeChild(this.panelDerecho.lastChild);
+        }
+
+        this.cantidadEmojis += 3;
+
+        this.generarEmojis();
     }
 }
+
+window.addEventListener('load', () => {
+    new EmojiMatchingGame();
+});
