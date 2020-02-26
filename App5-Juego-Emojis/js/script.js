@@ -7,14 +7,15 @@ class EmojiMatchingGame{
         this.imagenEmoji = 'images/emoji.png';
 
         this.generarEmojis();
+        this.body.onclick = this.terminarJuego.bind(this);
     }
 
     generarEmojis() {
         for(let i = 1; i < this.cantidadEmojis; ++i){
             let nuevoEmoji = document.createElement('img');
             nuevoEmoji.src = this.imagenEmoji;
-            let x = Math.floor(Math.random() * 400);
-            let y = Math.floor(Math.random() * 420);
+            let x = Math.floor(Math.random() * 380);
+            let y = Math.floor(Math.random() * 400);
             nuevoEmoji.style.left = `${x}px`;
             nuevoEmoji.style.top = `${y}px`;
 
@@ -47,6 +48,13 @@ class EmojiMatchingGame{
         this.cantidadEmojis += 3;
 
         this.generarEmojis();
+    }
+
+    terminarJuego() {
+        alert('¡Has perdido!');
+
+        this.panelIzquierdo.lastChild.onclick = null;
+        this.body.onclick = null;
     }
 }
 
