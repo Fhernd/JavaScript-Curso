@@ -30,7 +30,7 @@ class EmojiMatchingGame{
 
         this.panelDerecho.appendChild(clonacionEmojis);
 
-        this.panelIzquierdo.lastChild.onclick = this.pasarSiguienteNivel;
+        this.panelIzquierdo.lastChild.onclick = this.pasarSiguienteNivel.bind(this);
     }
 
     pasarSiguienteNivel(evento) {
